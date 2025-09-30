@@ -1,0 +1,27 @@
+{
+  "name": "apply-digital-interview-test",
+  "version": "1.0.0",
+  "type":"module",
+  "main": "index.js",
+  "scripts": {
+    "test:desktop": "npx playwright test tests/product_checkout.spec.ts --project=chromium --project=firefox --headed",
+    "test:mobile": "npx playwright test tests/product_checkout.spec.ts --project=MobileChrome --project=MobileSafari --headed",
+    "test:desktop:audit": "npx playwright test tests/audit_case.spec.ts --project=chromium --headed",
+    "test:mobile:audit": "npx playwright test tests/audit_case.spec.ts --project=MobileChrome --headed",
+    "allure:clean": "npx rimraf allure-results allure-report",
+    "allure:report": "npx allure generate allure-results",
+    "allure:open": "npx allure open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@faker-js/faker": "^10.0.0",
+    "@playwright/test": "^1.55.1",
+    "@types/node": "^24.5.2",
+    "allure-playwright": "^3.4.1",
+    "lighthouse": "^12.8.2",
+    "playwright-lighthouse": "^4.0.0"
+  }
+}
