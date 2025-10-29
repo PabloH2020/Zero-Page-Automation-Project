@@ -10,10 +10,11 @@ test('Performance & Accessibility Audit', async () => {
       const page = await browser.newPage();
       const homePage = new HomePage(page);
       await homePage.goHome();
-      // Expect our to contain Automation Excercise.
-      await expect(homePage.getTitle()).resolves.toMatch('Automation Exercise');
+      // Expect our page to match the correct title.
+      await expect(homePage.getTitle()).resolves.toMatch('Zero - Personal Banking - Loans - Credit Cards');
 
-      //lighthouse performance report
+
+      //lighthouse performance report depending on the thresholds defined for each category
       await playAudit({
             page: page,
             thresholds: {

@@ -13,16 +13,25 @@ export class HomePage {
     return this.page.title();
   }
 
-  async navigateToProducts() {
-    await this.page.locator('//a[@href="/products"]').click();
+  async navigateToOnlineBanking() {
+    await this.page.locator('//*[@id="onlineBankingMenu"]').click();
   }
 
-  async navigateToCart() {
-    await this.page.locator('//*[@id="header"]/div/div/div/div[2]/div/ul/li[3]/a').click();
+  async navigateToFeedback() {
+    await this.page.locator('//*[@id="feedback"]').click();
   }
 
-  async logout() {
-    await this.page.locator('//*[@id="header"]/div/div/div/div[2]/div/ul/li[4]/a').click();
-    await expect(this.page.locator('//*[@class="signup-form"]')).toBeVisible();
+  async navigateToServices() {
+    await this.page.locator('//*[@id="online-banking"]').click();
+  }
+  
+  async navigateToLogin() {
+    await this.page.locator('//*[@id="signin_button"]').click();
+  }
+
+  async validatePrivacyStatementContent() {
+    const privacyContent = await this.page.locator('//span[@id="privacy_statement_link"]');
+    await privacyContent.click();
+    expect(this.page.url()).toContain('privacy');
   }
 }

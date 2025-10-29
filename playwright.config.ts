@@ -34,7 +34,7 @@ export default defineConfig({
     video:'on',
     screenshot:'only-on-failure',
     headless:false,
-    baseURL:'https://automationexercise.com/',
+    baseURL:'http://zero.webappsecurity.com/',
   },
   
   /* Configure projects for major browsers */
